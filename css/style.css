@@ -1,0 +1,10 @@
+:root{
+    --merah: #da251d;
+    
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
