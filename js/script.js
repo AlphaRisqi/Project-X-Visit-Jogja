@@ -4,10 +4,10 @@ const disco = document.getElementById('disco');
 const link = document.querySelectorAll(".link");
 const list = document.querySelectorAll(".list");
 const bg = [
-'../img/bg/10-things-to-do-in-yogyakarta-as-a-solo-traveler.jpg',
-'../img/bg/aerial-view-of-borobudur-temple-at-sunrise-near-yogyakarta-indonesia-video.jpg',
-'../img/bg/parangtritis_beach.jpg',
-'../img/bg/Untitled-design-15.jpg',
+'img/bg/10-things-to-do-in-yogyakarta-as-a-solo-traveler.jpg',
+'img/bg/aerial-view-of-borobudur-temple-at-sunrise-near-yogyakarta-indonesia-video.jpg',
+'img/bg/parangtritis_beach.jpg',
+'img/bg/Untitled-design-15.jpg',
 ];
 const bgslide = document.getElementById('bg');
 const options = {
