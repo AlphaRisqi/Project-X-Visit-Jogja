@@ -10,6 +10,12 @@
     font-family: 'Jogja';
     src: url(../fonts/Jogjajakartype.otf);
 }
+svg {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 1em;
+    height: 1em;
+}
 html{
     scroll-behavior: smooth;
 }
@@ -30,7 +36,7 @@ body::before{
     width: 100%;
     height: 100%;
     z-index: -1;
-    filter: blur(5px) opacity(0.1) grayscale(100);
+    filter: blur(5px) opacity(0.1) grayscale(0);
 }
 header{
     backdrop-filter: blur(5px);
@@ -186,44 +192,18 @@ header ul li  :active{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.799);
     transform: scale(0.95);
 }
-.FAQ {
-    background-color: #ffae0000;
-    border: solid 1px rgba(255, 255, 255, 0.725);
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.589);
-    backdrop-filter: blur(1px);
-    margin-top: 5vh;
-    text-align: center;
-    font-size: 4vh;
-    font-weight: 600;
-    border-radius: 25px;
-    padding: 2vh;
-    transition: 0.1s;
-    background-color: rgb(0, 162, 255);
-}
-.FAQ:hover{
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.589);
-    border: solid 1px rgba(255, 255, 255, 0.341);
-    backdrop-filter: blur(3px);
-    transition: 0.3s;
-    font-weight: 200;
-    transform: scale(0.99);
-}
-.FAQ:active{
-    text-shadow: 0 0 10px black;
-    border: solid 0px rgb(95, 61, 0);
-    background-color: rgba(255, 198, 107, 0.685);
-    backdrop-filter: blur(0px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.799);
-    transform: scale(0.95);
-}
 .container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2vw;
     margin: 0 auto;
     place-items: center; 
     margin: 2vw;
+}
+.container > .faq:nth-child(7){
+    grid-column: span 3;
+    background-color: #ffe9ad;
+    font-weight: 700;
 }
 .card {
     background-color: white;
@@ -232,13 +212,20 @@ header ul li  :active{
     transition: 0.3s ease;
     text-align: center;
     min-height: 150px;
-    border: solid 0px rgba(255, 145, 0, 0);
+    outline: solid 2px rgba(255, 145, 0, 0);
+    outline-offset: 5px;
 }
 .card:hover{
     box-shadow: 0 0px 20px rgba(255, 230, 0, 0.127);
-    transform: scale(1.03);
+    transform: scale(1.01);
     transition: 0.3s ease-out;
-    border: solid 2px rgb(255, 145, 0);
+    outline: solid 2px rgb(255, 145, 0);
+    outline-offset: 5px;
+}
+.card:active{
+    outline: solid 5px rgba(255, 255, 0, 0);
+    outline-offset: 20px;
+    transform: scale(0.95);
 }
 .card a{
     text-decoration: none;
@@ -257,8 +244,87 @@ header ul li  :active{
 }
 .card-content{
     text-align: center;
-    margin: 0px 7px;
+    margin: 0px 20px;
     color:rgb(66, 34, 0);
+}
+.FAQ{
+    gap: 1vw;
+}
+
+.faq{
+    width: 100%;
+    font-weight: 500;
+    padding: 15px;
+    color:rgb(66, 34, 0);
+    font-size: 1.2vw;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0px 3px rgba(71, 29, 0, 0.514);
+    transition: 0.3s ease;
+    text-align: center;
+    outline: solid 2px rgba(255, 145, 0, 0);
+    /* border: solid 1px rgb(0, 0, 0); */
+}
+
+.faq:hover{
+    box-shadow: 0 0px 20px rgba(255, 230, 0, 0.127);
+    transform: scale(1.01);
+    transition: 0.3s ease-out;
+    outline: solid 2px rgb(255, 145, 0);
+    outline-offset: 5px;
+    font-weight: 700;
+}
+.faq:active{
+    outline: solid 5px rgba(255, 255, 0, 0);
+    outline-offset: 15px;
+    transform: scale(0.95);
+}
+
+.content{
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.475);
+    background-color: white;
+    text-align: center;
+    transition: all ease 0.3s;
+    max-width: 30vw;
+    color:rgb(66, 34, 0); 
+}
+.content h1{
+    font-family: jogja; margin: 10px; color:rgb(156, 81, 0)
+}
+#infoclose{
+    border-radius: 5px;
+     font-size: 1.1rem;
+     transition: all ease 0.3s;
+     margin-top: 10px;
+     padding: 5px;
+     background-color:rgb(156, 81, 0);
+     color: white;
+     font-weight: 600;
+}
+#infoclose:hover{
+     transform: scale(1.01);
+}
+#infoclose:active{
+     transform: scale(0.99);
+}
+
+.info, .popup-hidden{
+    display: none !important;
+}
+.popup-visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.458);
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
 }
 
 footer{
@@ -292,3 +358,62 @@ footer ul{
     justify-content: space-between;
     grid-template-columns: repeat(3, auto);
 }
+    /* Profile */
+        #profile{
+            height: 100%;
+            width: 100%;
+            background-color: rgba(3, 3, 3, 0.328);
+            position: fixed;
+            z-index: 1001;
+            backdrop-filter: blur(3px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .profile{
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.475);
+            background-color: white;
+            text-align: center;
+            transition: all ease 0.3s;
+            transform: scale(0.9);
+        }
+        .infome{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        #profileimg{
+            height: 40vh;
+            border-radius: 20px;
+            box-shadow: 0 0 5px rgba(49, 26, 0, 0.796);
+        }
+        tr{
+            vertical-align: top;
+        }
+        .close{
+            border-radius: 5px;
+            border: 1px solid black;
+            float: right;
+            margin-left: 10px;
+            font-size: 1.1rem;
+            background-color: rgba(0, 0, 0, 0);
+            transition: all ease 0.3s;
+            padding: 5px;
+        }
+        #see{
+            border: 1px solid rgb(156,81, 0);
+            background-color:rgb(156, 81, 0);
+            color: white;
+            font-weight: 600;
+        }
+        .close:hover{
+            transform: scale(1.05);
+        }
+        .close:active{
+            transform: scale(0.99);
+        }
